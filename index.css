@@ -17,11 +17,12 @@ h1 {
     width: 50%;
     margin: 0 auto 0 auto;
     letter-spacing: 0.2rem;
-    font-family: Lobster sans-serif;
-    /*text-align: center;*/
+    font-family: Lobster, sans-serif;
+    text-align: center;
+    font-weight: normal;
 }
 
-h1::first-letter {
+h1:first-letter {
     font-size: 100px;
 }
 
