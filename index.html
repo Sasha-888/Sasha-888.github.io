@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Мой Геленджик</title>
+    <!--<link rel="stylesheet" type="text/css" href="bootstrap.css">-->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <!--<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">-->
+</head>
+
+<body>
+
+<h1>Мой Геленджик</h1>
+
+<nav id="nav">
+    <ul>
+        <li id="float">More</li>
+    </ul>
+    <ul id="main">
+        <li>Home</li>
+        <li>News</li>
+        <li>Economics</li>
+        <li>Local</li>
+        <li>Sports</li>
+        <li>Culture</li>
+        <li>Travels</li>
+    </ul>
+</nav>
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <!--Кнопка гамбургер-->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img width="25px" alt="Brand" src="gelik_gerb.gif">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-nav-demo">
+            <ul class="nav navbar-nav">
+                <li><a href="">About</a></li>
+                <li><a href="http://gelendzhik.org/city/wcam/">Веб-Камеры</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="">Sign Up</a></li>
+                <li><a href="">Log In</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Меню <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="main_div">
+    <div id="foodList">
+        <input type="text" id="inputList" placeholder="Введите задачу...">
+        <input type="button" class="btn btn-success" id="addButton" value="Добавить">
+        <input type="button" class="btn btn-danger" id="delButton" value="Удалить выбранное" onclick="delButton();">
+        <ul id="taskList">
+
+            <!--<li>
+                <input type="checkbox" id="7">
+                <label for="7">тест тест тест</label>
+            </li> &lt;!&ndash;todo: разобраться...&ndash;&gt;-->
+
+        </ul>
+    </div>
+    <p>
+        <a href="2008/2008_mountain.html">2008г. Горы</a>
+    </p>
+
+    <label for="shit">Shit:</label>
+    <select name="shit" id="shit"> <!--multiple и size="" для мультивыбора-->
+        <optgroup label="Полегче">
+            <option value="alc">Бухло</option>
+            <option value="weed">Трава</option>
+            <option value="smoke">Сиги</option>
+        </optgroup>
+        <optgroup label="Пожеще">
+            <option value="meth" selected>Амфитосы</option>
+            <option value="acid">Кислота</option>
+            <option value="cocain">Кокс</option>
+            <option value="heroin">Хмурый</option>
+        </optgroup>
+    </select>
+
+    <del><p>Неверная информация</p></del>
+    <ins><p>Новая информация</p></ins>
+
+
+    <form>
+        <div><label for="first_name">First Name:</label>
+            <input id="first_name" type="text" placeholder="First Name" required name="first">
+
+            <label for="last_name">Last Name:</label>
+            <input id="last_name" type="text" placeholder="Last Name" required name="last"></div>
+
+        <div><label for="male">Male</label>
+            <input id="male" type="radio" value="Male" name="Gender" required>
+
+            <label for="female">Female</label>
+            <input id="female" type="radio" value="Female" name="Gender" required>
+
+            <label for="other">Other</label>
+            <input id="other" type="radio" value="Other" name="Gender" required></div>
+
+        <div><label for="email">Email</label>
+            <input id="email" type="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" pattern=".{5,10}" title="5 to 10 characters" required>
+        </div>
+
+        <div><label for="birthday">Birthday</label>
+            <input id="birthday" type="date" name="birthday" required></div>
+
+        <div><label for="agreement">I agree to the terms and conditions</label>
+            <input id="agreement" type="checkbox" name="agreement" value="true" required></div>
+
+        <div><input type="submit" class="btn btn-success" value="Submit"></div>
+
+
+    </form>
+
+
+    <table>
+        <tr>
+            <td>11111</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2" colspan="2"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+</div>
+
+<script src="jquery.js"></script> <!--jq всегда первым-->
+<script src="index.js"></script>
+<script src="bootstrap.min.js"></script>
+</body>
+</html>

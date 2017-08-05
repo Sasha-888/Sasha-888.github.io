@@ -1,0 +1,175 @@
+body {
+    background: black url("10082008074.jpg") fixed top right no-repeat; /*top right - при уменьшении окна браузера фокус падает на верхний правый угол*/
+    background-size: cover;
+    /*font-family: 'Lato', sans-serif;*/
+    color: black;
+
+}
+
+#main_div {
+    border: 1px solid gray;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: rgba(6, 0, 255, .6);
+    width: 50%;
+    margin: 0 auto 0 auto;
+    letter-spacing: 0.2rem;
+    /*text-align: center;*/
+}
+
+h1::first-letter {
+    font-size: 100px;
+}
+
+h1:hover {
+    color: mediumblue;
+}
+
+#foodList {
+    background-color: rgba(0, 128, 128, .5);
+    font-size: large;
+    margin-right: auto;
+
+}
+
+li:hover {
+    text-transform: uppercase;
+}
+
+div#foodList ul li {
+    list-style-type: none;
+}
+
+div#foodList ul {
+    color: white;
+    padding: 5px;
+}
+
+a:link {
+    font-weight: bolder;
+}
+
+a:hover {
+    background-color: blue;
+    color: white;
+}
+
+#foodList input:checked { /*Сдвигает выбранный чекбокс вправо на 50px*/
+    margin-left: 30px;
+}
+
+/*input:checked + label{*/
+/*text-decoration: line-through;*/
+/*color: gainsboro;*/
+/*}*/
+
+/*li:hover input:checked + label:hover, input:checked + label:hover{*/
+/*text-transform: none;*/
+/*}*/
+
+.crossed { /*не перебивает выше селектор*/
+    text-decoration: line-through;
+    color: gainsboro;
+}
+
+.crossed:hover {
+    text-transform: none;
+}
+
+label {
+    margin-left: 5px;
+}
+
+form {
+    background-color: rgba(0, 128, 128, .5);
+    font-size: large;
+    /*color: white;*/
+    /*float: right;*/
+    padding: 15px;
+    width: 600px;
+    margin: 30px auto; /*центорвка с использованием auto работает только при наличии width*/
+}
+
+form div {
+    margin: 5px;
+}
+
+/*input[type="text"]:hover {*/
+/*border: 1px solid red;*/
+/*background: gray;*/
+/*}*/
+
+input[type="submit"]:hover {
+    background: green;
+    color: white;
+}
+
+form div:nth-of-type(6) { /*отсчитывает сначала*/
+    border: 3px solid yellow;
+}
+
+/*li:nth-last-of-type(3) { !*отсчитывает с конца*!*/
+/*text-decoration: underline;*/
+/*}*/
+
+table {
+    background-color: rgba(0, 128, 128, .5);
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    /*padding: 100px;*/
+    border-collapse: collapse;
+}
+
+td {
+    border: 3px solid white;
+}
+
+#addButton {
+    margin: 5px;
+}
+
+#inputList {
+    margin: 5px;
+}
+
+/*////////////////////////////////////////////////////////////////////*/
+nav#nav {
+    background-color: rgba(0, 128, 128, .5);
+    margin: 16px 0;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.4);
+    /*border-radius: 5px;*/
+}
+
+ul#main {
+    width: 900px;
+    margin: 0 auto 0 50px;
+    padding: 0;
+}
+
+nav#nav li {
+    text-transform: uppercase;
+    font: bold 15px Tahoma;
+    color: white;
+    list-style-type: none;
+    display: inline-block;
+    width: auto;
+    padding: 15px 15px;
+
+}
+
+#nav li:hover {
+    background-color: #F0F0F1;
+    color: #9E9E9E;
+    cursor: pointer;
+}
+
+#float {
+    float: right;
+    margin: 0 50px;
+}
+
+/*////////////////////////////////////////////////////////////////////*/
