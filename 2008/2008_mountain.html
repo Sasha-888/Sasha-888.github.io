@@ -5,14 +5,17 @@
     <title>Горы 2008г</title>
     <!--<link rel="stylesheet" type="text/css" href="../index.css">-->
     <link rel="stylesheet" type="text/css" href="2008_mountain.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,800" rel="stylesheet">
-    <script src="2008_mountain.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 </head>
 <body>
+
+<div id="all"><a href="../index.html"><img id="gelLogo" alt="Brand" src="../gelik_gerb.gif"></a>
 <a href="../index.html">На домашнюю</a>
 <input type="button" id="superBtn" value="Увеличить все фото" onclick="smallOrBig();">
 <input type="button" id="allBig" value="Увеличить фото" onclick="allBig();">
 <input type="button" id="allSmall" value="Уменьшить фото" onclick="allSmall();">
+<input type="button" id="animation" value="Выключить анимацию">
+
 <p>Горы 2008г</p>
 <img src="28082008421.jpg" onclick="picSize(this);">
 <img src="28082008429.jpg" onclick="picSize(this);">
@@ -37,9 +40,10 @@
 <img src="28082008512.jpg" onclick="picSize(this);">
 <img src="28082008513.jpg" onclick="picSize(this);">
 <img src="28082008514.jpg" onclick="picSize(this);">
-<img src="28082008515.jpg" onclick="picSize(this);">
+<img src="28082008515.jpg" onclick="picSize(this);"></div>
 
 <script src="../jquery.js"></script> <!--jq всегда первым-->
+<script src="2008_mountain.js"></script>
 <script src="../bootstrap.min.js"></script>
 </body>
 </html>
