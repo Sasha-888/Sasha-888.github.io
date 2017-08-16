@@ -3,6 +3,7 @@ body {
     background-size: cover;
     /*font-family: 'Lato', sans-serif;*/
     color: black;
+    margin: 10px 0;
 
 }
 
@@ -85,38 +86,6 @@ label {
     margin-left: 5px;
 }
 
-form {
-    background-color: rgba(0, 128, 128, .5);
-    font-size: large;
-    /*color: white;*/
-    /*float: right;*/
-    padding: 15px;
-    width: 600px;
-    margin: 30px auto; /*центорвка с использованием auto работает только при наличии width*/
-}
-
-form div {
-    margin: 5px;
-}
-
-/*input[type="text"]:hover {*/
-/*border: 1px solid red;*/
-/*background: gray;*/
-/*}*/
-
-input[type="submit"]:hover {
-    background: green;
-    color: white;
-}
-
-form div:nth-of-type(6) { /*отсчитывает сначала*/
-    border: 3px solid yellow;
-}
-
-/*li:nth-last-of-type(3) { !*отсчитывает с конца*!*/
-/*text-decoration: underline;*/
-/*}*/
-
 table {
     background-color: rgba(0, 128, 128, .5);
     width: 300px;
@@ -142,8 +111,7 @@ td {
 nav#nav {
     background-color: rgba(0, 128, 128, .5);
     margin: 16px 0;
-    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.4);
-    /*border-radius: 5px;*/
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 ul#main {
@@ -163,15 +131,58 @@ nav#nav li {
 
 }
 
-#nav li:hover {
+#nav li:hover, #nav li:hover span  {
     background-color: #F0F0F1;
     color: #9E9E9E;
     cursor: pointer;
 }
 
-#float {
+#buttonLogin {
     float: right;
     margin: 0 50px;
+}
+/*////////////////////////////////////////////////////////////////////*/
+#divForm {
+    position: absolute;
+    width: 200px;
+    height: 180px;
+    padding: 0;
+    margin: 0;
+    top: 197px;
+    right: 10px;
+    display: none;
+    background-color: rgba(0, 128, 128, .5);
+
+    -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    -o-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+#logForm {
+    display: none;
+    color: white;
+    padding: 10px;
+}
+
+#buttonLogin a {
+    text-decoration: none;
+    color: white;
+}
+
+#open {
+    margin: 0;
+    padding: 5px 0 5px 30px;
+    cursor: pointer;
+    background: url(images/open.png) 10px 7px no-repeat;
+    color: white;
+}
+#open.close {
+    background-image: url(images/close.png);
+}
+
+nav#nav li#buttonLogin {
+    padding-left: 2px;
 }
 
 /*////////////////////////////////////////////////////////////////////*/

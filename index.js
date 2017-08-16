@@ -1,3 +1,29 @@
+//////////////////////////////jQuery/////////////////////////////////
+$("#delButton").click(function () {
+    $("input:checked").parent().remove(); // 1 вариант
+    // $('#taskList li').has("input:checked").remove(); // 2 вариант
+    // if ($("input").is(':checked')) { // 3 вариант
+    //     $("input:checked").parent().remove();
+    // } //------------------------------------------
+    if (!($('#taskList li').length === 3)) {
+        $("#addButton").removeAttr("disabled");
+        $("#inputList").removeAttr("disabled");
+    }
+}); // end of #delButton
+/////////////////////////////////////////////////////////////////////
+$('#buttonLogin').click(function (e) {
+    e.stopPropagation();
+    e.preventDefault();
+    $('#divForm').slideToggle(400, function () {
+        $('#logForm').fadeToggle(500);
+    });
+    $("#open").toggleClass('close');
+}); // окончание click
+/////////////////////////////////////////////////////////////////////todo: скрытие login при клике вне формы
+$().click(function () {
+});
+
+/////////////////////////////////////////////////////////////////////
 function newLi(getId) {
     var label = getId.getElementsByTagName("label")[0];
     var checkBox = getId.getElementsByTagName("input")[0].checked;
@@ -10,32 +36,18 @@ function newLi(getId) {
     }
 }
 
-//===================================================================// todo: разобраться...
-// var ul = document.getElementById("taskList");
-// ul.addEventListener('click', newLi, false);
-//
-// function newLi(event) {
-//     var test = event.type;
-//     console.log(test);
-//     var checkBox = event.target.checked;
-//     console.log(checkBox);
-//     if (!checkBox) {
-//         test.style.textDecoration = "line-through";
-//     } else {
-//         test.style.textDecoration = "none";
-//     }
-// }
-//===================================================================
 /////////////////////////////////////////////////////////////////////
 var newId = 1; // счетчик для генерации id
 var offBtn = document.getElementById("addButton");
 var textInput = document.getElementById("inputList");
 /////////////////////////////////////////////////////////////////////
 window.onload = init;
+
 function init() {
     var button = document.getElementById("addButton");
     button.onclick = addTaskButton;
 }
+
 /////////////////////////////////////////////////////////////////////
 // window.onload = init;
 function addTaskButton() {
@@ -43,6 +55,7 @@ function addTaskButton() {
     var task = textInput.value;
     if (task === "") {
         alert("Введите задачу...");
+        return false;
     } else {
         console.log(task);
         var li = document.createElement("li"); // создание нового элемента li
@@ -60,29 +73,30 @@ function addTaskButton() {
         // console.log(ul.children); // !!!!!!!!ПОЛУЧАЕТ ОБЪЕКТЫ ВСЕХ ДОЧЕРНИХ ЭЛЕМЕНТОВ В ВИДЕ МАССИВА!!!!!!!
     }
     // ============деактивирует кнопку "Добавить"=============
-    if (liCount === 4) {
+    if (liCount === 2) {
         offBtn.setAttribute("disabled", "disabled");
         textInput.setAttribute("disabled", "disabled");
     }
 }
-/////////////////////////////////////////////////////////////////////todo: наладить удаление - все за одно нажатие.
-function delButton() {
-    var ul = document.getElementById("taskList"); // для arrUl.removeChild(li)
-    var arrUl = ul.children; // возвращает массив из объектов li.
-    console.log(arrUl);
-    for (var i = 0; i < arrUl.length; i++) {
-        var li = arrUl[i];
-        console.log(li);
-        var checkLi = li.getElementsByTagName("input")[0].checked; // проверяет чекбокс в ul > li > input на установленную в чекбоксе галочку.
-        if (checkLi) {
-            ul.removeChild(li); // для ul
-            // li.remove(); //  для arrUl, при этом ul не нужен, можно удалить.
-            offBtn.removeAttribute("disabled");
-            textInput.removeAttribute("disabled");
-        } else {
-            console.log(checkLi);
-        }
-    }
-    console.log(ul);
-}
+
+/////////////////////////////////////////////////////////////////////
+// function delButton() {
+//     var ul = document.getElementById("taskList"); // для arrUl.removeChild(li)
+//     var arrUl = ul.children; // возвращает массив из объектов li.
+//     console.log(arrUl);
+//     for (var i = 0; i < arrUl.length; i++) {
+//         var li = arrUl[i];
+//         console.log(li);
+//         var checkLi = li.getElementsByTagName("input")[0].checked; // проверяет чекбокс в ul > li > input на установленную в чекбоксе галочку.
+//         if (checkLi) {
+//             ul.removeChild(li); // для ul
+//             // li.remove(); //  для arrUl, при этом ul не нужен, можно удалить.
+//             offBtn.removeAttribute("disabled");
+//             textInput.removeAttribute("disabled");
+//         } else {
+//             console.log(checkLi);
+//         }
+//     }
+//     console.log(ul);
+// }
 
