@@ -1,15 +1,25 @@
 //////////////////////////////jQuery/////////////////////////////////
+$("#inputList").focus();
+$("#password").prop({"disabled": true, 'required': false});
+/////////////////////////////////////////////////////////////////////
 $("#delButton").click(function () {
-    $("input:checked").parent().remove(); // 1 вариант
+    $("#taskList :checked").parent().remove(); // 1 вариант
     // $('#taskList li').has("input:checked").remove(); // 2 вариант
-    // if ($("input").is(':checked')) { // 3 вариант
+    // $('li input').each(function () { // 3 вариант с prop()
+    //     if($(this).prop('checked')){
+    //         $(this).parent().remove()
+    //     }
+    // });
+    // if ($("input").is(':checked')) { // 4 вариант
     //     $("input:checked").parent().remove();
     // } //------------------------------------------
-    if (!($('#taskList li').length === 3)) {
-        $("#addButton").removeAttr("disabled");
-        $("#inputList").removeAttr("disabled");
+    if ($('#taskList li').length !== 5) {
+        $("#addButton").removeAttr("disabled"); // или prop("disabled", false);
+        $("#inputList").removeAttr("disabled"); // или prop("disabled", false);
     }
 }); // end of #delButton
+/////////////////////////////////////////////////////////////////////
+
 /////////////////////////////////////////////////////////////////////
 $('#buttonLogin').click(function (e) {
     e.stopPropagation();
@@ -21,9 +31,13 @@ $('#buttonLogin').click(function (e) {
 }); // окончание click
 /////////////////////////////////////////////////////////////////////todo: скрытие login при клике вне формы
 $().click(function () {
+});/////////////////////////////////////////////////////////////////////
+$("#inputList").focus(function () {
+    $(this).attr("placeholder", "");
 });
-
-/////////////////////////////////////////////////////////////////////
+$("#inputList").blur(function () {
+    $(this).attr("placeholder", "Введите задачу...");
+});/////////////////////////////////////////////////////////////////////
 function newLi(getId) {
     var label = getId.getElementsByTagName("label")[0];
     var checkBox = getId.getElementsByTagName("input")[0].checked;
@@ -34,9 +48,7 @@ function newLi(getId) {
         label.removeAttribute("class");
         getId.removeAttribute("class");
     }
-}
-
-/////////////////////////////////////////////////////////////////////
+}/////////////////////////////////////////////////////////////////////
 var newId = 1; // счетчик для генерации id
 var offBtn = document.getElementById("addButton");
 var textInput = document.getElementById("inputList");
@@ -46,12 +58,10 @@ window.onload = init;
 function init() {
     var button = document.getElementById("addButton");
     button.onclick = addTaskButton;
-}
-
-/////////////////////////////////////////////////////////////////////
+}/////////////////////////////////////////////////////////////////////
 // window.onload = init;
 function addTaskButton() {
-    var liCount = document.getElementById("taskList").childElementCount;
+    var liCount = document.getElementById("taskList").childElementCount; // счет с 0 ..?
     var task = textInput.value;
     if (task === "") {
         alert("Введите задачу...");
@@ -72,13 +82,15 @@ function addTaskButton() {
         // console.log(ul.children.length); // = ul.childElementCount
         // console.log(ul.children); // !!!!!!!!ПОЛУЧАЕТ ОБЪЕКТЫ ВСЕХ ДОЧЕРНИХ ЭЛЕМЕНТОВ В ВИДЕ МАССИВА!!!!!!!
     }
-    // ============деактивирует кнопку "Добавить"=============
-    if (liCount === 2) {
+    // ============деактивирует кнопку "Добавить и поле ввода задачи"=============
+    if (liCount === 4) {
         offBtn.setAttribute("disabled", "disabled");
         textInput.setAttribute("disabled", "disabled");
     }
-}
-
+}/////////////////////////////////////////////////////////////////////todo поставить галочку напротив выбора ✓
+$('#shit').change(function () {
+    // if ($(this).val() =='  ')
+});
 /////////////////////////////////////////////////////////////////////
 // function delButton() {
 //     var ul = document.getElementById("taskList"); // для arrUl.removeChild(li)
@@ -99,4 +111,5 @@ function addTaskButton() {
 //     }
 //     console.log(ul);
 // }
+
 

@@ -1,10 +1,24 @@
 body {
-    background: black url("10082008074.jpg") fixed top right no-repeat; /*top right - при уменьшении окна браузера фокус падает на верхний правый угол*/
+    background: black url(10082008074.jpg) fixed top right no-repeat; /*top right - при уменьшении окна браузера фокус падает на верхний правый угол*/
     background-size: cover;
     /*font-family: 'Lato', sans-serif;*/
-    color: black;
+    color: white;
     margin: 10px 0;
+}
 
+::selection {
+    background: #0000ff;
+    color: #fff;
+}
+
+#testP {
+    color: white;
+    margin: 15px;
+}
+
+#testP:before {
+    color: red;
+    content: "ПОДСКАЗКА! "
 }
 
 #main_div {
@@ -42,13 +56,17 @@ li:hover {
     text-transform: uppercase;
 }
 
-div#foodList ul li {
+#foodList ul li {
     list-style-type: none;
 }
 
-div#foodList ul {
+#foodList ul {
     color: white;
     padding: 5px;
+}
+
+#foodList ul li:nth-child(odd) {
+    background: lightslategray;
 }
 
 a:link {
@@ -131,7 +149,7 @@ nav#nav li {
 
 }
 
-#nav li:hover, #nav li:hover span  {
+#nav li:hover, #nav li:hover span {
     background-color: #F0F0F1;
     color: #9E9E9E;
     cursor: pointer;
@@ -141,6 +159,7 @@ nav#nav li {
     float: right;
     margin: 0 50px;
 }
+
 /*////////////////////////////////////////////////////////////////////*/
 #divForm {
     position: absolute;
@@ -163,6 +182,7 @@ nav#nav li {
     display: none;
     color: white;
     padding: 10px;
+    /*box-sizing: border-box;*/
 }
 
 #buttonLogin a {
@@ -177,12 +197,17 @@ nav#nav li {
     background: url(images/open.png) 10px 7px no-repeat;
     color: white;
 }
+
 #open.close {
     background-image: url(images/close.png);
 }
 
 nav#nav li#buttonLogin {
     padding-left: 2px;
+}
+
+#logForm input {
+    width: 100%;
 }
 
 /*////////////////////////////////////////////////////////////////////*/
